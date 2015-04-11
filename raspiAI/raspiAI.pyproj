@@ -6,8 +6,7 @@
     <ProjectGuid>fbf1dd62-99d2-4261-8f8e-f7fa81f18a8c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>raspiAI.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>..\..\..\..\..\..\..\..\Python27\Lib\site-packages\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>raspiAI</Name>
@@ -23,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="raspiAI.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

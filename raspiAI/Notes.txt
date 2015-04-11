@@ -1,0 +1,19 @@
+/// PACKAGES INSTALL HISTORY / NEEDED ON RASPI ///
+//* Text-To-Speech components: 
+sudo apt-get install espeak [http://espeak.sourceforge.net/]
+sudo pip install pyttsx     [http://pyttsx.readthedocs.org/en/latest/install.html]
+
+
+/// RASPI VIRTUAL INSTRUCTIONS ///
+1) download raspbian .img
+2) instructions http://xecdesign.com/qemu-emulating-raspberry-pi-the-easy-way/
+3) extract these files to qemu folder
+https://dl.dropboxusercontent.com/u/60712778/qemu.7z
+
+qemu-system-armw.exe -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda 2015-02-16-raspbian-wheezy.img
+
+
+download http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download
+
+c:\python27\scripts\easy_install pyttsx
+c:\python27\scripts\easy_install easy_install "C:\Users\Joe\Downloads\pywin32-219.win32-py2.7.exe"
