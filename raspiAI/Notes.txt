@@ -1,9 +1,55 @@
-/// PACKAGES INSTALL HISTORY / NEEDED ON RASPI ///
+**RECOMMENDED1-if python2		:pip - A Python Package Manager  $ sudo apt-get install python-pip
+**									then: sudo apt-get install python-dev [needed for stallion compile]
+**RECOMMENDED2-Stallion			:A Python Package Manager  $ sudo pip install stallion
+/////////////////////////////////////////////////////
+//== PACKAGES INSTALL HISTORY / NEEDED ON RASPI ==///
+/////////////////////////////////////////////////////
 //* Text-To-Speech components: 
-sudo apt-get install espeak [http://espeak.sourceforge.net/]
-sudo pip install pyttsx     [http://pyttsx.readthedocs.org/en/latest/install.html]
+sudo apt-get install espeak					[http://espeak.sourceforge.net/]
+sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.html]
+//* Other components:
+sudo pip install configobj					[https://github.com/DiffSK/configobj]
+sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
+sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
+////////////////////////////////////////////////////
+//== SYSTEM PREP FOR PYTHON STEPS / ON WINDOWS ==///
+////////////////////////////////////////////////////
+pyttsx						[https://github.com/parente/pyttsx]
+pywin32						[http://sourceforge.net/projects/pywin32/]
+ConfigObj					[https://github.com/DiffSK/configobj]
+SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 
 
+////////////////////////////////////////////////////
+//== RASPIAI SETUP TUTORIAL STEPS / ON WINDOWS ==///
+////////////////////////////////////////////////////
+1) Perform "PACKAGES INSTALL HISTORY / NEEDED ON RASPI" steps above.
+2) Copy the "raspiAI.py" files to your raspberry pi folder: /usr/local/lib/python2.7/site-packages
+3) $ sudo python /usr/local/lib/python2.7/site-packages/raspiAI.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING===
 /// RASPI VIRTUAL INSTRUCTIONS ///
 1) download raspbian .img
 2) instructions http://xecdesign.com/qemu-emulating-raspberry-pi-the-easy-way/
@@ -11,9 +57,3 @@ sudo pip install pyttsx     [http://pyttsx.readthedocs.org/en/latest/install.htm
 https://dl.dropboxusercontent.com/u/60712778/qemu.7z
 
 qemu-system-armw.exe -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda 2015-02-16-raspbian-wheezy.img
-
-
-download http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download
-
-c:\python27\scripts\easy_install pyttsx
-c:\python27\scripts\easy_install easy_install "C:\Users\Joe\Downloads\pywin32-219.win32-py2.7.exe"
