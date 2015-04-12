@@ -11,6 +11,8 @@ sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.ht
 sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
+sudo pip install TwitterAPI	
+   [NEXT:Fill in Twitter settings in file ] [https://github.com/geduldig/TwitterAPI]
 ////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON STEPS / ON WINDOWS ==///
 ////////////////////////////////////////////////////
