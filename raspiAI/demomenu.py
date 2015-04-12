@@ -1,5 +1,5 @@
 import TXT2SPEECH
-#import TwitterAI
+import TwitterAI
 import SpeechRecognition
 __version__ = '0.1.20150412'
 __author__ = "JPSIII and sjs_20012001"
@@ -70,13 +70,13 @@ class demomenu(object):
         """ Demo TXT2SPEECH """
         tts = TXT2SPEECH.demo()
 
-    #def _twitterauto(self):
-    #    """ Demo TwitterAI [PostTweet-auto]"""
-    #    twitter = TwitterAI.demo()
+    def _twitterauto(self):
+        """ Demo TwitterAI [PostTweet-auto]"""
+        twitter = TwitterAI.demo()
 
-    #def _twitterprompt(self):
-    #    """ Demo TwitterAI [PostTweet-prompt]"""
-    #    twitter = TwitterAI.demoTwo()
+    def _twitterprompt(self):
+        """ Demo TwitterAI [PostTweet-prompt]"""
+        twitter = TwitterAI.demoTwo()
 
     def _speechrecognition(self):
         """ Demo speechrecognition"""
@@ -87,8 +87,8 @@ class demomenu(object):
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
         run_menu(40, self.__dict__, 
                 ('Text2Speech demo', self._txttospeech),
-                #('Twitter [PostTweet-auto] demo', self._twitterauto),
-                #('Twitter [PostTweet-prompt] demo', self._twitterprompt),
+                ('Twitter [PostTweet-auto] demo', self._twitterauto),
+                ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition))
 
 def start():
