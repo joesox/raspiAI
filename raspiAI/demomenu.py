@@ -69,16 +69,21 @@ class demomenu():
         """ Demo TXT2SPEECH """
         tts = TXT2SPEECH.demo()
 
-    def _twitter(self):
-        """ Demo TwitterAI """
+    def _twitterauto(self):
+        """ Demo TwitterAI [PostTweet-auto]"""
         twitter = TwitterAI.demo()
+
+    def _twitterprompt(self):
+        """ Demo TwitterAI [PostTweet-prompt]"""
+        twitter = TwitterAI.demoTwo()
 
     def menu(self):
         """Main Menu loop"""
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
         run_menu(40, self.__dict__, 
                 ('Text2Speech demo', self._txttospeech),
-                ('Twitter demo', self._twitter))
+                ('Twitter [PostTweet-auto] demo', self._twitterauto),
+                ('Twitter [PostTweet-prompt] demo', self._twitterprompt))
 
 def start():
     i = demomenu()
