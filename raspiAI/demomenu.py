@@ -64,7 +64,7 @@ def run_menu(width, values, *options):
             elif 0 < choice <= len(options):
                 options[choice-1][1]()
 
-class demomenu():
+class demomenu(object):
     """ """
     def _txttospeech(self):
         """ Demo TXT2SPEECH """
@@ -81,7 +81,6 @@ class demomenu():
     def _speechrecognition(self):
         """ Demo speechrecognition"""
         sr = SpeechRecognition.demo()
-
 
     def menu(self):
         """Main Menu loop"""
