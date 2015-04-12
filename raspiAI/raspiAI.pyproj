@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="demomenu.py" />
+    <Compile Include="SpeechRecognition.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TwitterAI.py">
       <SubType>Code</SubType>
     </Compile>
