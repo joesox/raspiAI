@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbf1dd62-99d2-4261-8f8e-f7fa81f18a8c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>raspiAI.py</StartupFile>
+    <StartupFile>demomenu.py</StartupFile>
     <SearchPath>..\..\..\..\..\..\..\..\Python27\Lib\site-packages\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,7 +21,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="raspiAI.py" />
+    <Compile Include="classTemplate.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="demomenu.py" />
+    <Compile Include="TwitterAI.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TXT2SPEECH.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Notes.txt" />

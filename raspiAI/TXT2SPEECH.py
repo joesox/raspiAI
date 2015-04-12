@@ -6,12 +6,8 @@ __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Text-to-Speech class that handles basic Text-to-Speech functions."
 __here__ = os.path.abspath(os.path.dirname(__file__))
-"""
-[TEXT2SPEACH]
- Text-to-Speech class that handles
- basic Text-to-Speech functions.
-"""
-class TXT2SPEECH:
+
+class txttospeech(object):
     """
     Text-to-Speech class that handles
     basic Text-to-Speech functions.
@@ -35,7 +31,7 @@ class TXT2SPEECH:
         self.engine.setProperty('voice', self.Voice.id)
 
     """ 
-    Sends the text to the TXT2SPEECH engine 
+    Sends the text to the txttospeech engine 
     if True, send to print    
     """
     def Say(self, text, bPrint):
@@ -45,12 +41,14 @@ class TXT2SPEECH:
         if (bPrint == True):
             print text
 
-def start():
-    speech = TXT2SPEECH(90, 1)
+def demo():
+    speech = txttospeech(90, 1)
     print "Started!"
     speech.Say("Listen up! I am speaking!", True)
-    print "Finished!"
+    print "Finished txttospeech demo!"
     print "**************"
 
 if __name__ == '__main__':
-  start()
+  demo()
+
+

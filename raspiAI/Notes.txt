@@ -11,16 +11,16 @@ sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.ht
 sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
-sudo pip install TwitterAPI	
-   [NEXT:Fill in Twitter settings in file ] [https://github.com/geduldig/TwitterAPI]
+sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
+
 ////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON STEPS / ON WINDOWS ==///
 ////////////////////////////////////////////////////
 pyttsx						[https://github.com/parente/pyttsx]
-pywin32						[http://sourceforge.net/projects/pywin32/]
+pywin32						[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
 ConfigObj					[https://github.com/DiffSK/configobj]
 SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
-
+twitterapi					[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
 
 ////////////////////////////////////////////////////
 //== RASPIAI SETUP TUTORIAL STEPS / ON WINDOWS ==///
@@ -31,11 +31,11 @@ SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 
 
 
-
-
-
-
-
+////////////////////////////////////////////////////////////////
+//== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
+////////////////////////////////////////////////////////////////
+a. Create SpeechRecognition class and use ilikepie.wav for testing [sjs20012001]
+b. Create twitter class and tie in raspi twitter account [joesox]
 
 
 
