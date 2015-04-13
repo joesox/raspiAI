@@ -1,5 +1,6 @@
 import TXT2SPEECH
 import TwitterAI
+import SpeechRecognition
 __version__ = '0.1.20150412'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
@@ -63,7 +64,7 @@ def run_menu(width, values, *options):
             elif 0 < choice <= len(options):
                 options[choice-1][1]()
 
-class demomenu():
+class demomenu(object):
     """ """
     def _txttospeech(self):
         """ Demo TXT2SPEECH """
@@ -77,13 +78,18 @@ class demomenu():
         """ Demo TwitterAI [PostTweet-prompt]"""
         twitter = TwitterAI.demoTwo()
 
+    def _speechrecognition(self):
+        """ Demo speechrecognition"""
+        sr = SpeechRecognition.demo()
+
     def menu(self):
         """Main Menu loop"""
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
         run_menu(40, self.__dict__, 
                 ('Text2Speech demo', self._txttospeech),
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
-                ('Twitter [PostTweet-prompt] demo', self._twitterprompt))
+                ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
+                ('SpeechRecognition demo', self._speechrecognition))
 
 def start():
     i = demomenu()

@@ -1,4 +1,5 @@
 from TwitterAPI import TwitterAPI
+import time
 __version__ = '0.1.20150412'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
@@ -35,12 +36,13 @@ class TwitterAI(object):
         if (r.status_code == 200):
             return True
         else:
+            print("Status code: " + r.text)
             return False
 
 def demo():
     #tweets = TwitterAI(_CONSUMERKEY, _CONSUMERSECRET, _ACCESSTOKENKEY, _ACCESSTOKENSECRET)
     tweets = TwitterAI("25enA89NntEbLNOjRkVVfghQN", "AVfN70sGHszyhPY9wPFuiPnmoGxKdsQUCXc6wGfFdiaU5epR4p", "3150477894-cqpOY8FDfUn7xu84TfQ3lCoVqgIsM5OKlzyaUGG", "cPpEpYKIDR7XU0kh18Xy7MkcZkDYQjoNfhusAlknno3tj")
-    TESTTOSEND = "Demo version PostTweet test version: " + __version__
+    TESTTOSEND = "Demo version PostTweet test version: " + __version__ + str(time.time())
     print("SENDING: " + TESTTOSEND)
     #perform tweet...
     result = tweets.PostTweet(TESTTOSEND)
@@ -52,7 +54,7 @@ def demo():
 
 def demoTwo():
     tweets = TwitterAI(_CONSUMERKEY, _CONSUMERSECRET, _ACCESSTOKENKEY, _ACCESSTOKENSECRET)
-    TESTTOSEND = "Demo version PostTweet test version: " + __version__
+    TESTTOSEND = "Demo version PostTweet test version: " + __version__ + str(time.time())
     print("SENDING: " + TESTTOSEND)
     #perform tweet...
     result = tweets.PostTweet(TESTTOSEND)
