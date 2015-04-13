@@ -4,7 +4,7 @@ __version__ = '0.1.20150412'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI. Update your C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt"
-
+__localcreds__ = 'C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt'
 """
 Twitter supports both user and application authentication, known as oAuth 1 and oAuth 2:
 -User authentication gives you access to all API endpoints, basically read and write persmission. 
@@ -56,7 +56,7 @@ class TwitterAI(object):
             return False
 
 def demo():
-    tweets = TwitterAI('C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt')
+    tweets = TwitterAI(__localcreds__)
     TESTTOSEND = "Demo version PostTweet test version: " + __version__ + str(time.time())
     print("SENDING: " + TESTTOSEND)
     #perform tweet...
@@ -68,8 +68,8 @@ def demo():
     print "Finished TwitterAI demo!"
 
 def demoTwo():
-    tweets = TwitterAI(_CONSUMERKEY, _CONSUMERSECRET, _ACCESSTOKENKEY, _ACCESSTOKENSECRET)
-    TESTTOSEND = "Demo version PostTweet test version: " + __version__ + str(time.time())
+    tweets = TwitterAI(__localcreds__)
+    TESTTOSEND = raw_input("ENTER WHAT TO SEND: ")
     print("SENDING: " + TESTTOSEND)
     #perform tweet...
     result = tweets.PostTweet(TESTTOSEND)
