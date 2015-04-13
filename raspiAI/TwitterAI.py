@@ -3,7 +3,7 @@ import time
 __version__ = '0.1.20150412'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
-__doc__ = "Twitter Class to work with TwitterAPI."
+__doc__ = "Twitter Class to work with TwitterAPI. Update your C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt"
 
 """
 Twitter supports both user and application authentication, known as oAuth 1 and oAuth 2:
@@ -18,13 +18,29 @@ class TwitterAI(object):
             return 'Attrs()'  
         return '<%s>' % (self.__class__.__name__)
 
-    def __init__(self, consumerkey, consumersecret, accesstokenkey, accesstokensecret):
+    def __init__(self, credentialsfile):
         """ Initialize global class variables """
-        self.consumer_key = consumerkey
-        self.consumer_secret = consumersecret
-        self.access_token_key = accesstokenkey
-        self.access_token_secret = accesstokensecret
-
+        try:
+            """
+            loadsettings() reads the credentialsfile.txt installed with TwitterAPI module
+            consumer_key=
+            consumer_secret=
+            access_token_key=
+            access_token_secret=
+            """
+            self.lineList = open(credentialsfile, 'r').readlines()
+            for i, line in enumerate(self.lineList):
+                splitlist = line.split('=')
+                if(splitlist[0] == "consumer_key"):
+                    self.consumer_key = splitlist[1].strip("\n")
+                if(splitlist[0] == "consumer_secret"):
+                    self.consumer_secret = splitlist[1].strip("\n")
+                if(splitlist[0] == "access_token_key"):
+                    self.access_token_key = splitlist[1].strip("\n")
+                if(splitlist[0] == "access_token_secret"):
+                    self.access_token_secret = splitlist[1].strip("\n")
+        except NameError, x:
+            print 'Exception: ', x
 
     def PostTweet(self, text):
         api = TwitterAPI(self.consumer_key,
@@ -40,8 +56,7 @@ class TwitterAI(object):
             return False
 
 def demo():
-    #tweets = TwitterAI(_CONSUMERKEY, _CONSUMERSECRET, _ACCESSTOKENKEY, _ACCESSTOKENSECRET)
-    tweets = TwitterAI("25enA89NntEbLNOjRkVVfghQN", "AVfN70sGHszyhPY9wPFuiPnmoGxKdsQUCXc6wGfFdiaU5epR4p", "3150477894-cqpOY8FDfUn7xu84TfQ3lCoVqgIsM5OKlzyaUGG", "cPpEpYKIDR7XU0kh18Xy7MkcZkDYQjoNfhusAlknno3tj")
+    tweets = TwitterAI('C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt')
     TESTTOSEND = "Demo version PostTweet test version: " + __version__ + str(time.time())
     print("SENDING: " + TESTTOSEND)
     #perform tweet...
