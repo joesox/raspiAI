@@ -16,15 +16,16 @@ sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Sup
 ////////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS OPENCV NOT WORKING==///
 ////////////////////////////////////////////////////////
-pyttsx						[https://github.com/parente/pyttsx]
+pyttsx 1.1					[https://github.com/parente/pyttsx]
 pywin32						[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
-ConfigObj					[https://github.com/DiffSK/configobj]
-SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
-twitterapi					[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-Numpy						[http://www.numpy.org , http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download]
+ConfigObj 5.0.6				[https://github.com/DiffSK/configobj]
+SpeechRecognition 1.2.4		[https://github.com/Uberi/speech_recognition#readme]
+twitterapi 2.3.3			[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
+Numpy 1.6.1					[http://www.numpy.org , http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download]
 OpenCV  [http://opencv.org/downloads.html windows install;
 		follow these instructions to configure opencv setup  https://www.youtube.com/watch?v=YL2YKdCRaSo
 		opencv 2.3.1 http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.3.1/OpenCV-2.3.1-win-superpack.exe/download
+		Copy the two files in "C:\opencv\build\python\2.7" TO "C:\Python27\Lib\site-packages"
 		Place in Windows System Variables: OPENCV_DIR = c:\opencv (or whereever you installed)
 		reboot PC to load new variables
 		Now test in python >>> import cv2
