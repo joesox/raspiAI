@@ -34,6 +34,8 @@ OpenCV  [http://opencv.org/downloads.html windows install;
 		Next, download Path editor https://patheditor2.codeplex.com/ and add "C:\opencv\build\x86\vc12\bin" path to environment variables
 		Now test in python >>> import cv2
 		IF I get stuck: http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/]
+OPTIONALS:
+PIL							[http://www.pythonware.com/products/pil ]
 //== RASPIAI SETUP TUTORIAL STEPS / ON WINDOWS ==///
 ////////////////////////////////////////////////////
 1) Perform "PACKAGES INSTALL HISTORY / NEEDED ON RASPI" steps above.
