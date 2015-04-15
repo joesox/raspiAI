@@ -47,8 +47,8 @@ PIL							[http://www.pythonware.com/products/pil ]
 ////////////////////////////////////////////////////////////////
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
-a. Create SpeechRecognition class and use ilikepie.wav for testing [sjs20012001]
-b. Create twitter class and tie in raspi twitter account [joesox]
+a. Create function to recognize mic input [sjs20012001]
+b. Create demo function for opencv facial recognition [joesox]
 
 
 
