@@ -34,6 +34,9 @@
     <Compile Include="TXT2SPEECH.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Vision.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Notes.txt" />

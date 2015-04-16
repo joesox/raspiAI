@@ -12,7 +12,8 @@ sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
 sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-
+Try this next:
+http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 ////////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS   ///
 ////////////////////////////////////////////////////////
@@ -21,7 +22,7 @@ Python 2.7.9					[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi]
 PythonPackageManager(optional)	[http://sourceforge.net/projects/pythonpkgmgr/]
 pywin32							[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
 Numpy 1.6.1						[http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download] [http://www.numpy.org]
-Safe to use PythonPackageManager for the folowwing except opencv:
+Safe to use PythonPackageManager for the following except opencv:
 	pyttsx 1.1						[https://github.com/parente/pyttsx]
 	ConfigObj 5.0.6					[https://github.com/DiffSK/configobj]
 	SpeechRecognition 1.2.4			[https://github.com/Uberi/speech_recognition#readme]
@@ -54,7 +55,7 @@ PIL							[http://www.pythonware.com/products/pil ]
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
-b. Create demo function for opencv facial recognition [joesox]
+b. Create demo function for opencv facial recognition with video [joesox]
 
 
 
