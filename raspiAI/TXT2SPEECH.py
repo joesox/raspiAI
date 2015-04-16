@@ -42,7 +42,7 @@ class txttospeech(object):
             print text
 
 def demo():
-    speech = txttospeech(90, 1)
+    speech = txttospeech(90, 0)
     print "Started!"
     speech.Say("Listen up! I am speaking!", True)
     print "Finished txttospeech demo!"
