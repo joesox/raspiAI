@@ -1,8 +1,9 @@
 import TXT2SPEECH
 import TwitterAI
 import SpeechRecognition
+import Vision
 
-__version__ = '0.1.20150412'
+__version__ = '0.1.20150415'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = 'Demo Menu for raspiAI'
@@ -83,6 +84,10 @@ class demomenu(object):
         """ Demo speechrecognition"""
         sr = SpeechRecognition.demo()
 
+    def _visionphoto(self):
+        """ Demo Vision class """
+        v = Vision.demo()
+
     def menu(self):
         """Main Menu loop"""
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
@@ -90,7 +95,8 @@ class demomenu(object):
                 ('Text2Speech demo', self._txttospeech),
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
-                ('SpeechRecognition demo', self._speechrecognition))
+                ('SpeechRecognition demo', self._speechrecognition),
+                ('Vision demo [photo]', self._visionphoto))
 
 def start():
     i = demomenu()

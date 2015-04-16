@@ -1,6 +1,6 @@
 from TwitterAPI import TwitterAPI
 import time
-__version__ = '0.1.20150412'
+__version__ = '0.1.20150415'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI. Update your C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt"

@@ -2,7 +2,7 @@ import os
 import sys
 import speech_recognition as sr
 
-__version__ = '0.1.20150412'
+__version__ = '0.1.20150415'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "SpeechRecognition Class to work with SpeechRecognitionAPI."

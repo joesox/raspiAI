@@ -34,8 +34,13 @@
     <Compile Include="TXT2SPEECH.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Vision.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ilikepie.wav" />
+    <Content Include="image.jpg" />
     <Content Include="Notes.txt" />
   </ItemGroup>
   <PropertyGroup>
