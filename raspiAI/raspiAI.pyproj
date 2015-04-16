@@ -39,6 +39,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ilikepie.wav" />
+    <Content Include="image.jpg" />
     <Content Include="Notes.txt" />
   </ItemGroup>
   <PropertyGroup>
