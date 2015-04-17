@@ -88,6 +88,10 @@ class demomenu(object):
         """ Demo Vision class """
         v = Vision.demo()
 
+    def _visionvideo(self):
+        """ Demo Vision class """
+        v = Vision.demo2()
+
     def menu(self):
         """Main Menu loop"""
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
@@ -96,7 +100,8 @@ class demomenu(object):
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition),
-                ('Vision demo [photo]', self._visionphoto))
+                ('Vision demo [photo]', self._visionphoto),
+                ('Vision demo [video]', self._visionvideo))
 
 def start():
     i = demomenu()
