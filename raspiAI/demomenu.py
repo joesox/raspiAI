@@ -2,8 +2,8 @@ import TXT2SPEECH
 import TwitterAI
 import SpeechRecognition
 import Vision
-
-__version__ = '0.1.20150415'
+import Jokes
+__version__ = '0.1.20150416'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = 'Demo Menu for raspiAI'
@@ -92,6 +92,14 @@ class demomenu(object):
         """ Demo Vision class """
         v = Vision.demo2()
 
+    def _tellrandomjoke(self):
+        """ Demo Joke class """
+        j = Jokes.demo()
+
+    def _tellrandomjokeandtweet(self):
+        """ Demo Joke class """
+        j = Jokes.demo2()
+
     def menu(self):
         """Main Menu loop"""
         box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
@@ -101,7 +109,9 @@ class demomenu(object):
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition),
                 ('Vision demo [photo]', self._visionphoto),
-                ('Vision demo [video]', self._visionvideo))
+                ('Vision demo [video]', self._visionvideo),
+                ('Joke demo [random joke]', self._tellrandomjoke),
+                ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet))
 
 def start():
     i = demomenu()

@@ -1,6 +1,6 @@
 from TwitterAPI import TwitterAPI
 import time
-__version__ = '0.1.20150415'
+__version__ = '0.1.20150416'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI. Update your C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt"
@@ -12,14 +12,20 @@ Twitter supports both user and application authentication, known as oAuth 1 and 
 -Application authentication also has elevated rate limits.
 """
 class TwitterAI(object):
-    """Twitter Class to work with TwitterAPI"""
+    """
+    Twitter Class to work with TwitterAPI
+        credentialsfile = path to credentials.txt in Python site-packages-twitterapi-2.3.3-py2.7.egg
+    """
     def __repr__(self):
         if not self:  
             return 'Attrs()'  
         return '<%s>' % (self.__class__.__name__)
 
     def __init__(self, credentialsfile):
-        """ Initialize global class variables """
+        """
+        credentialsfile = path to credentials.txt in Python site-packages-twitterapi-2.3.3-py2.7.egg
+        Initialize global class variables
+        """
         try:
             """
             loadsettings() reads the credentialsfile.txt installed with TwitterAPI module
@@ -43,6 +49,10 @@ class TwitterAI(object):
             print 'Exception: ', x
 
     def PostTweet(self, text):
+        """
+        PostTweet(text)
+            text = Text to post to twitter
+        """
         api = TwitterAPI(self.consumer_key,
                  self.consumer_secret,
                  self.access_token_key,
