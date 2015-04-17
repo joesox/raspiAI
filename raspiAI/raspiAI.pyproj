@@ -45,6 +45,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="haarcascade_frontalface_alt.xml" />
     <Content Include="ilikepie.wav" />
     <Content Include="image.jpg" />
     <Content Include="Notes.txt" />
