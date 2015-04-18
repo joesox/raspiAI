@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AIMLAI.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="classTemplate.py">
       <SubType>Code</SubType>
     </Compile>

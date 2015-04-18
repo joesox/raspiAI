@@ -17,8 +17,8 @@ class txttospeech(object):
             return 'Attrs()'  
         return '<%s>' % (self.__class__.__name__)
     
-    """ Initalize all global variables needed """
     def __init__(self, rate, voicenum):
+        """ Initalize all global variables needed """
         self.Rate = rate
         self.engine = pyttsx.init()                             # ## Set up the voice engine ##
         self.engine.setProperty('rate', self.Rate)
