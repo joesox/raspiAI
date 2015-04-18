@@ -17,8 +17,8 @@ class txttospeech(object):
             return 'Attrs()'  
         return '<%s>' % (self.__class__.__name__)
     
-    """ Initalize all global variables needed """
     def __init__(self, rate, voicenum):
+        """ Initalize all global variables needed """
         self.Rate = rate
         self.engine = pyttsx.init()                             # ## Set up the voice engine ##
         self.engine.setProperty('rate', self.Rate)
@@ -35,11 +35,12 @@ class txttospeech(object):
     if True, send to print    
     """
     def Say(self, text, bPrint):
-        self.engine.say(text)
-        self.engine.runAndWait()
         #Did we want to display this speech in text on screen?
+        #important: print before saying so we have something to read right away
         if (bPrint == True):
             print text
+        self.engine.say(text)
+        self.engine.runAndWait()
 
 def demo():
     speech = txttospeech(90, 0)

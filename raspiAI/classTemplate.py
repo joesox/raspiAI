@@ -1,6 +1,6 @@
 import os
 import sys
-__version__ = '0.1.20150416'
+__version__ = '0.1.20150418'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI."
