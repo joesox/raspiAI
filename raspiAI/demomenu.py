@@ -1,6 +1,6 @@
 import os
 import sys
-import timer
+import time
 import TXT2SPEECH
 import TwitterAI
 import SpeechRecognition
@@ -83,7 +83,7 @@ class demomenu(object):
         if (bloadaiml == True):
             #Let the user know we need to pre-load the AIML files for knowledge
             print "LOADING ALL AIML FILES FROM '" + aimlfolder + "'\r\nTHIS WILL TAKE A FEW MINUTES..."
-            timer.sleep(2)
+            time.sleep(2)
             self.AIMLFOLDER = aimlfolder
             self._k = aiml.Kernel()
             #self._k.bootstrap(learnFiles = aimlfile)
@@ -191,8 +191,8 @@ class demomenu(object):
                 ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
 
 def start():
-    #i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
-    i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system
+    i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
+    #i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system
     i.menu()
 
 if __name__ == '__main__':
