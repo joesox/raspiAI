@@ -1,16 +1,19 @@
 import os
 import sys
+import timer
 import TXT2SPEECH
 import TwitterAI
 import SpeechRecognition
 import Vision
 import Jokes
 import AIMLAI
+import Pandorabot
 import aiml
-__version__ = '0.1.20150416'
+__version__ = '0.1.20150418'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = 'Demo Menu for raspiAI'
+__raspiaibotid__ = "f3d034f13e34d592"
 
 def printline(length, div, line):
     """
@@ -72,17 +75,21 @@ def run_menu(width, values, *options):
 
 class demomenu(object):
     """ """
-    def __init__(self, aimlfile):
+    def __init__(self, bloadaiml, aimlfolder):
         """
         Initialize global class variables
         Create aiml object with file
         """
-        self.AIMLFILE = aimlfile
-        self._k = aiml.Kernel()
-        #self._k.bootstrap(learnFiles = aimlfile)
-        #self._k.saveBrain("raspiai.brn")   
-        full_file_paths = self.get_filepaths("aiml-en-us-foundation-alice")
-        self._k.bootstrap(learnFiles = full_file_paths)
+        if (bloadaiml == True):
+            #Let the user know we need to pre-load the AIML files for knowledge
+            print "LOADING ALL AIML FILES FROM '" + aimlfolder + "'\r\nTHIS WILL TAKE A FEW MINUTES..."
+            timer.sleep(2)
+            self.AIMLFOLDER = aimlfolder
+            self._k = aiml.Kernel()
+            #self._k.bootstrap(learnFiles = aimlfile)
+            #self._k.saveBrain("raspiai.brn")   
+            full_file_paths = self.get_filepaths(aimlfolder)
+            self._k.bootstrap(learnFiles = full_file_paths)
 
     def get_filepaths(self, directory):
         """
@@ -152,10 +159,26 @@ class demomenu(object):
         print "INPUT:Do you know Joe?|OUTPUT:" + AIMLAI.Say(self, "Do you know Joe?", self._k)
         print "=====\r\nTESTS COMPLETED."
 
+    def _aimlpandorabot(self):
+        """ Pandorabot Personality System """
+        p = Pandorabot.Pandorabot(__raspiaibotid__)
+        print "\nEntering interactive mode (ctrl-c to exit)"
+        while True:
+            input = raw_input(">> ")
+            if(str(input).lower() == "exit"):
+                break
+            else:
+                response = p._botsession.think(input)
+                speech = TXT2SPEECH.txttospeech(110, 0)
+                print "Started!"
+                speech.Say(response, True) #True=print
+
+        print "Finished Pandorabot Personality System!"
+
     def menu(self):
         """Main Menu loop"""
-        box(40, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
-        run_menu(40, self.__dict__, 
+        box(60, 'c', 'raspiAI', __version__, __url__, '-'*40, __doc__)
+        run_menu(60, self.__dict__, 
                 ('Text2Speech demo', self._txttospeech),
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
@@ -164,13 +187,12 @@ class demomenu(object):
                 ('Vision demo [video]', self._visionvideo),
                 ('Joke demo [random joke]', self._tellrandomjoke),
                 ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet),
-                ('AIML demo [Pre-set questions]', self._aimldemo))
+                ('AIML demo [Pre-set questions]', self._aimldemo),
+                ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
 
 def start():
-    #NOGOOD:    i = demomenu("aiml-en-us-foundation-alice\update1.aiml"), "aiml-en-us-foundation-alice\alice.aiml")
-    #           "aiml-en-us-foundation-alice\biography.aiml", "aiml-en-us-foundation-alice\bot.aiml"
-    #i = demomenu("aiml-en-us-foundation-alice\default.aiml") #NOT BAD
-    i = demomenu("aiml-en-us-foundation-alice\bot.aiml")
+    #i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
+    i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system
     i.menu()
 
 if __name__ == '__main__':

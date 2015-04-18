@@ -1,9 +1,9 @@
-**RECOMMENDED1-if python2		:pip - A Python Package Manager  $ sudo apt-get install python-pip
-**									then: sudo apt-get install python-dev [needed for stallion compile]
-**RECOMMENDED2-Stallion			:A Python Package Manager  $ sudo pip install stallion
 /////////////////////////////////////////////////////
 //== PACKAGES INSTALL HISTORY / NEEDED ON RASPI ==///
 /////////////////////////////////////////////////////
+**RECOMMENDED1-for python2		:pip - A Python Package Manager  $ sudo apt-get install python-pip
+**									then: sudo apt-get install python-dev [needed for stallion compile]
+**RECOMMENDED2-Stallion			:A Python Package Manager  $ sudo pip install stallion
 //* Text-To-Speech components: 
 sudo apt-get install espeak					[http://espeak.sourceforge.net/]
 sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.html]
@@ -44,6 +44,9 @@ OpenCV  [http://opencv.org/downloads.html windows install;
 		IF I get stuck: http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/]
 OPTIONALS:
 PIL							[http://www.pythonware.com/products/pil ]
+PbPython 0.1.9				[https://developer.pandorabots.com/docs]
+
+////////////////////////////////////////////////////
 //== RASPIAI SETUP TUTORIAL STEPS / ON WINDOWS ==///
 ////////////////////////////////////////////////////
 1) Perform "PACKAGES INSTALL HISTORY / NEEDED ON RASPI" steps above.
