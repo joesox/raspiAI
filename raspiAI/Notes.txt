@@ -8,11 +8,15 @@
 sudo apt-get install espeak					[http://espeak.sourceforge.net/]
 sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.html]
 //* Other components:
+sudo pip install timer
 sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
 sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-Try this next:
+download opencv 2.3.1 here https://github.com/ltseez/opencv/archive/2.3.1.zip
+	Then, extract using sudo permissions to /usr/local/lib which will create /usr/local/lib/opencv-2.3.1 folder.
+	Next, 
+ref:
 http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 ////////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS   ///
