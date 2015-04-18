@@ -1,6 +1,6 @@
 import os
 import sys
-import timer
+import time
 import TXT2SPEECH
 import TwitterAI
 import SpeechRecognition
