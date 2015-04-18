@@ -19,16 +19,16 @@ http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspbe
 ////////////////////////////////////////////////////////
 Windows should have Text-To-Speech enabled already but if not you may need to enable.
 Python 2.7.9					[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi]
-PythonPackageManager(optional)	[http://sourceforge.net/projects/pythonpkgmgr/]
+PythonPackageManager(optional)	[http://sourceforge.net/projects/pythonpkgmgr/files/latest/download]
 pywin32							[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
 Numpy 1.6.1						[http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download] [http://www.numpy.org]
-Safe to use PythonPackageManager for the following except opencv:
+Safe to use PythonPackageManager for the following except opencv [in order]:
 	pyttsx 1.1						[https://github.com/parente/pyttsx]
 	ConfigObj 5.0.6					[https://github.com/DiffSK/configobj]
 	SpeechRecognition 1.2.4			[https://github.com/Uberi/speech_recognition#readme]
-	twitterapi 2.3.3				[https://github.com/geduldig/TwitterAPI] (You MUST supply your own Twitter creds in the TwitterAPI 'C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt')
 	requests 2.6.0					[http://python-requests.org]
 	oauthlib 0.7.2					[https://github.com/requests/requests-oauthlib]
+	twitterapi 2.3.3				[https://github.com/geduldig/TwitterAPI] (You MUST supply your own Twitter creds in the TwitterAPI 'C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt')
 OpenCV  [http://opencv.org/downloads.html windows install;
 		follow these instructions to configure opencv setup  https://www.youtube.com/watch?v=YL2YKdCRaSo
 		opencv 2.3.1 http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.3.1/OpenCV-2.3.1-win-superpack.exe/download
@@ -55,6 +55,7 @@ PIL							[http://www.pythonware.com/products/pil ]
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
+		- 
 b. Create demo function for opencv facial recognition with video [joesox]
 
 
