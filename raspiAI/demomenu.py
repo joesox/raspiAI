@@ -192,7 +192,7 @@ class demomenu(object):
 
 def start():
     i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
-    #i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system
+    #i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system #setting False creates some issues for _aimldemo & _aimlpandorabot
     i.menu()
 
 if __name__ == '__main__':
