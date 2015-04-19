@@ -1,18 +1,22 @@
-**RECOMMENDED1-if python2		:pip - A Python Package Manager  $ sudo apt-get install python-pip
-**									then: sudo apt-get install python-dev [needed for stallion compile]
-**RECOMMENDED2-Stallion			:A Python Package Manager  $ sudo pip install stallion
 /////////////////////////////////////////////////////
 //== PACKAGES INSTALL HISTORY / NEEDED ON RASPI ==///
 /////////////////////////////////////////////////////
+**RECOMMENDED1-for python2		:pip - A Python Package Manager  $ sudo apt-get install python-pip
+**									then: sudo apt-get install python-dev [needed for stallion compile]
+**RECOMMENDED2-Stallion			:A Python Package Manager  $ sudo pip install stallion
 //* Text-To-Speech components: 
 sudo apt-get install espeak					[http://espeak.sourceforge.net/]
 sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.html]
 //* Other components:
+sudo pip install timer
 sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
 sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-Try this next:
+download opencv 2.3.1 here https://github.com/ltseez/opencv/archive/2.3.1.zip
+	Then, extract using sudo permissions to /usr/local/lib which will create /usr/local/lib/opencv-2.3.1 folder.
+	Next, 
+ref:
 http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 ////////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS   ///
@@ -29,6 +33,7 @@ Safe to use PythonPackageManager for the following except opencv:
 	twitterapi 2.3.3				[https://github.com/geduldig/TwitterAPI] (You MUST supply your own Twitter creds in the TwitterAPI 'C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt')
 	requests 2.6.0					[http://python-requests.org]
 	oauthlib 0.7.2					[https://github.com/requests/requests-oauthlib]
+	aiml 0.8.6						[http://pyaiml.sourceforge.net]
 OpenCV  [http://opencv.org/downloads.html windows install;
 		follow these instructions to configure opencv setup  https://www.youtube.com/watch?v=YL2YKdCRaSo
 		opencv 2.3.1 http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.3.1/OpenCV-2.3.1-win-superpack.exe/download
@@ -43,6 +48,9 @@ OpenCV  [http://opencv.org/downloads.html windows install;
 		IF I get stuck: http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/]
 OPTIONALS:
 PIL							[http://www.pythonware.com/products/pil ]
+PbPython 0.1.9				[https://developer.pandorabots.com/docs]
+
+////////////////////////////////////////////////////
 //== RASPIAI SETUP TUTORIAL STEPS / ON WINDOWS ==///
 ////////////////////////////////////////////////////
 1) Perform "PACKAGES INSTALL HISTORY / NEEDED ON RASPI" steps above.
@@ -55,13 +63,25 @@ PIL							[http://www.pythonware.com/products/pil ]
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
-b. Create demo function for opencv facial recognition with video [joesox]
+b. Create demo function for AIML class [joesox]
 
 
 
 
-
-
+////////////////////////////////////////////////////
+///				FROM SCRATCH ON WINDOWS			 ///
+////////////////////////////////////////////////////
+1) Install GitHub for Windows
+2) Install Python 2.7.9 via windows setup file
+3) Install Microsoft Visual Studio Community Edition
+4) Install Python Tools 2.1 for Visual Studio 2013
+5) Continue following the steps above in section "SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS" then return to #6
+6) Clone the project using Git for windows (probably easier) or MSVS
+7) Open the raspiAI.sln file
+7) Make sure demomenu.py is the startup file and Press Start and the menu should appear. Congrats and have fun with your raspiAI
+NOTE: On your first commit in 
+Visual Studio 'msysgitVS.exe' may be prompted to install
+which is needed for git work
 
 
 
@@ -72,38 +92,3 @@ b. Create demo function for opencv facial recognition with video [joesox]
 
 old notes:
 ===NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING======NOTWORKING===
-////////////////////////////////////////////////////////
-//== SYSTEM PREP FOR PYTHON 3.4 STEPS / ON WINDOWS   ///
-////////////////////////////////////////////////////////
-Python 3.4 x86				[https://www.python.org/downloads/release/python-343/]		
-pyttsx						[https://github.com/parente/pyttsx]
-pywin32						[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py3.4.exe/download]
-ConfigObj					[https://github.com/DiffSK/configobj]
-SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
-twitterapi					[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-OpenCV  [http://opencv.org/downloads.html windows install;
-		-----------------------------------------------------------------------------------------------
-		BAILED OUT...
-		opencv 2.4.9 FAILED: Needs numpy 7 not 6	
-		http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.9/opencv-2.4.9.exe/download
-		-----------------------------------------------------------------------------------------------
-		BAILED OUT...
-		Following: https://msdn.microsoft.com/en-us/library/dn188695.aspx
-			Download: Kennect SDK v1.8, http://www.microsoft.com/en-us/download/details.aspx?id=40278
-		-----------------------------------------------------------------------------------------------
-		BAILED OUT...
-		extract to C: root, THEN in cmd:> setx -m OPENCV_DIR C:\opencv\build\x64\vc12 
-		Next, download Path editor https://patheditor2.codeplex.com/ and add "C:\opencv\build\x86\vc12\bin" path to environment variables
-		Now test in python >>> import cv2
-		IF I get stuck: http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/]
-Numpy						[http://www.numpy.org , http://sourceforge.net/projects/numpy/files/NumPy/1.9.2/numpy-1.9.2-win32-superpack-python3.4.exe/download]
-////////////////////////////////////////////////////
-
-
-/// RASPI VIRTUAL INSTRUCTIONS ///
-1) download raspbian .img
-2) instructions http://xecdesign.com/qemu-emulating-raspberry-pi-the-easy-way/
-3) extract these files to qemu folder
-https://dl.dropboxusercontent.com/u/60712778/qemu.7z
-
-qemu-system-armw.exe -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda 2015-02-16-raspbian-wheezy.img
