@@ -63,8 +63,8 @@ PbPython 0.1.9				[https://developer.pandorabots.com/docs]
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
-b. Create demo function for AIML class [joesox]
-
+b. Create ReceiverMessaging class which detects incoming events [joesox]
+c. Get opencv installed on raspi [joesox]
 
 
 
