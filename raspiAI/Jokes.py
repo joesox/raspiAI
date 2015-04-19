@@ -6,7 +6,7 @@ import sched, time
 import TXT2SPEECH
 import TwitterAI
 import random
-__version__ = '0.1.20150418'
+__version__ = '0.1.20150419'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Jokes Class: Tells jokes when asked to and when something triggers it to speak it."
