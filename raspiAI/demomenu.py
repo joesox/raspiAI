@@ -125,6 +125,10 @@ class demomenu(object):
         """ Demo speechrecognition"""
         sr = SpeechRecognition.demo()
 
+    def _speechmicrecognition(self):
+        """ Demo speechrecognition"""
+        sr = SpeechRecognition.demo2()
+
     def _visionphoto(self):
         """ Demo Vision class """
         v = Vision.demo()
@@ -183,12 +187,14 @@ class demomenu(object):
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition),
+                ('SpeechmicRecognition demo', self._speechmicrecognition),
                 ('Vision demo [photo]', self._visionphoto),
                 ('Vision demo [video]', self._visionvideo),
                 ('Joke demo [random joke]', self._tellrandomjoke),
                 ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet),
                 ('AIML demo [Pre-set questions]', self._aimldemo),
                 ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
+                
 
 def start():
     i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
