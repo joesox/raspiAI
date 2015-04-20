@@ -9,7 +9,7 @@ import Jokes
 import AIMLAI
 import Pandorabot
 import aiml
-__version__ = '0.1.20150418'
+__version__ = '0.1.20150419'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = 'Demo Menu for raspiAI'
@@ -125,6 +125,10 @@ class demomenu(object):
         """ Demo speechrecognition"""
         sr = SpeechRecognition.demo()
 
+    def _speechmicrecognition(self):
+        """ Demo speechrecognition"""
+        sr = SpeechRecognition.demo2()
+
     def _visionphoto(self):
         """ Demo Vision class """
         v = Vision.demo()
@@ -183,16 +187,18 @@ class demomenu(object):
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition),
+                ('SpeechmicRecognition demo', self._speechmicrecognition),
                 ('Vision demo [photo]', self._visionphoto),
                 ('Vision demo [video]', self._visionvideo),
                 ('Joke demo [random joke]', self._tellrandomjoke),
                 ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet),
                 ('AIML demo [Pre-set questions]', self._aimldemo),
                 ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
+                
 
 def start():
     i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
-    #i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system
+    #i = demomenu(False, "aiml-en-us-foundation-alice")  #Skip local AIML files because going to use Pandorabot for chatbot system #setting False creates some issues for _aimldemo & _aimlpandorabot
     i.menu()
 
 if __name__ == '__main__':

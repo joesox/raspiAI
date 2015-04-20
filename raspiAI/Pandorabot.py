@@ -1,7 +1,7 @@
 import os
 import requests
 from chatterbotapi import ChatterBotFactory, ChatterBotType
-__version__ = '0.1.20150418'
+__version__ = '0.1.20150419'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI. "
@@ -19,9 +19,12 @@ class Pandorabot(object):
         Initialize global class variables
         Create aiml object with file
         """
-        self._factory = ChatterBotFactory()
-        self._bot = self._factory.create(ChatterBotType.PANDORABOTS, __raspiaibotid__)
-        self._botsession = self._bot.create_session()
+        try:
+            self._factory = ChatterBotFactory()
+            self._bot = self._factory.create(ChatterBotType.PANDORABOTS, __raspiaibotid__)
+            self._botsession = self._bot.create_session()
+        except NameError, x:
+            print 'Exception: ', x
 
 def demo():
     P = Pandorabot(__raspiaibotid__)

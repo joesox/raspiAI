@@ -26,6 +26,8 @@ Python 2.7.9					[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi]
 PythonPackageManager(optional)	[http://sourceforge.net/projects/pythonpkgmgr/]
 pywin32							[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
 Numpy 1.6.1						[http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download] [http://www.numpy.org]
+pyaudio							[http://people.csail.mit.edu/hubert/pyaudio/ ][http://people.csail.mit.edu/hubert/pyaudio/packages/pyaudio-0.2.8.py27.exe]
+
 Safe to use PythonPackageManager for the following except opencv:
 	pyttsx 1.1						[https://github.com/parente/pyttsx]
 	ConfigObj 5.0.6					[https://github.com/DiffSK/configobj]
@@ -63,8 +65,8 @@ PbPython 0.1.9				[https://developer.pandorabots.com/docs]
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
-b. Create demo function for AIML class [joesox]
-
+b. Create ReceiverMessaging class which detects incoming events [joesox]
+c. Get opencv installed on raspi [joesox]
 
 
 
