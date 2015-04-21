@@ -154,6 +154,7 @@ class demomenu(object):
             print "LISTENING>> "
             input = sr.Micinput()
             print "  RASPAI HEARD: " + str(input)
+            #"exit" is a command; it is the first command.
             if(str(input).lower() == "exit"):
                 break
             else:
