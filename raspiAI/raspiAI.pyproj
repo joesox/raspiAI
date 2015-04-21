@@ -21,11 +21,24 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AIMLAI.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="chatterbotapi.py" />
     <Compile Include="classTemplate.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="demomenu.py" />
+    <Compile Include="Jokes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pandorabot.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SpeechRecognition.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TwitterAI.py">
@@ -34,8 +47,14 @@
     <Compile Include="TXT2SPEECH.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Vision.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="haarcascade_frontalface_alt.xml" />
+    <Content Include="ilikepie.wav" />
+    <Content Include="image.jpg" />
     <Content Include="Notes.txt" />
   </ItemGroup>
   <PropertyGroup>
