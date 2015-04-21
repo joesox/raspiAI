@@ -1,6 +1,6 @@
 from TwitterAPI import TwitterAPI
 import time
-__version__ = '0.1.20150418'
+__version__ = '0.1.20150419'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI. Update your C:\Python27\Lib\site-packages\\twitterapi-2.3.3-py2.7.egg\TwitterAPI\credentials.txt"
@@ -53,17 +53,20 @@ class TwitterAI(object):
         PostTweet(text)
             text = Text to post to twitter
         """
-        api = TwitterAPI(self.consumer_key,
-                 self.consumer_secret,
-                 self.access_token_key,
-                 self.access_token_secret)
-        r = api.request('statuses/update', {'status': text})
-        #print('PostTweet SUCCESS' if r.status_code == 200 else 'PostTweet FAILURE')
-        if (r.status_code == 200):
-            return True
-        else:
-            print("Status code: " + r.text)
-            return False
+        try:
+            api = TwitterAPI(self.consumer_key,
+                     self.consumer_secret,
+                     self.access_token_key,
+                     self.access_token_secret)
+            r = api.request('statuses/update', {'status': text})
+            #print('PostTweet SUCCESS' if r.status_code == 200 else 'PostTweet FAILURE')
+            if (r.status_code == 200):
+                return True
+            else:
+                print("Status code: " + r.text)
+                return False
+        except NameError, x:
+            print 'Exception: ', x
 
 def demo():
     tweets = TwitterAI(__localcreds__)

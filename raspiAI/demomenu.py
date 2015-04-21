@@ -9,7 +9,7 @@ import Jokes
 import AIMLAI
 import Pandorabot
 import aiml
-__version__ = '0.1.20150418'
+__version__ = '0.1.20150419'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = 'Demo Menu for raspiAI'
@@ -125,6 +125,10 @@ class demomenu(object):
         """ Demo speechrecognition"""
         sr = SpeechRecognition.demo()
 
+    def _speechmicrecognition(self):
+        """ Demo speechrecognition"""
+        sr = SpeechRecognition.demo2()
+
     def _visionphoto(self):
         """ Demo Vision class """
         v = Vision.demo()
@@ -140,6 +144,27 @@ class demomenu(object):
     def _tellrandomjokeandtweet(self):
         """ Demo Joke class """
         j = Jokes.demo2()
+
+    def _realTimeTalk(self):
+        """ Pandorabot Personality System """
+        p = Pandorabot.Pandorabot(__raspiaibotid__)
+        sr = SpeechRecognition.SpeechRecognition()
+        print "\nEntering interactive mode (Say exit to excape)"
+        while True:
+            print "LISTENING>> "
+            input = sr.Micinput()
+            print "  RASPAI HEARD: " + str(input)
+            #"exit" is a command; it is the first command.
+            if(str(input).lower() == "exit"):
+                break
+            else:
+                response = p._botsession.think(input)
+                speech = TXT2SPEECH.txttospeech(120, 0)
+                print "Started!"
+                speech.Say(response, True) #True=print
+
+        print "Finished Pandorabot Personality System with SpeechRecognition!"
+
 
     def _aimldemo(self):
         """ Demo Joke class """
@@ -183,12 +208,15 @@ class demomenu(object):
                 ('Twitter [PostTweet-auto] demo', self._twitterauto),
                 ('Twitter [PostTweet-prompt] demo', self._twitterprompt),
                 ('SpeechRecognition demo', self._speechrecognition),
+                ('SpeechmicRecognition demo', self._speechmicrecognition),
                 ('Vision demo [photo]', self._visionphoto),
                 ('Vision demo [video]', self._visionvideo),
                 ('Joke demo [random joke]', self._tellrandomjoke),
                 ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet),
                 ('AIML demo [Pre-set questions]', self._aimldemo),
-                ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
+                ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot),
+                ('Activate Pandorabot Personality System with SpeechmicRecognition', self._realTimeTalk))
+                
 
 def start():
     i = demomenu(True, "aiml-en-us-foundation-alice")  #Load local AIML files for chatbot system
