@@ -60,14 +60,13 @@ PbPython 0.1.9				[https://developer.pandorabots.com/docs]
 3) $ sudo python /usr/local/lib/python2.7/site-packages/raspiAI.py
 
 
-
 ////////////////////////////////////////////////////////////////
 //== TO DO ==/////== TO DO ==/////== TO DO ==/////== TO DO ==///
 ////////////////////////////////////////////////////////////////
 a. Create function to recognize mic input [sjs20012001]
 b. Create ReceiverMessaging class which detects incoming events [joesox]
 c. Get opencv installed on raspi [joesox]
-
+d. Create CommandSystem "what is trending?", "what is the phillies score?", "what is on tv tonight?" [joesox]
 
 
 ////////////////////////////////////////////////////

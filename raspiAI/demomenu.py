@@ -145,6 +145,27 @@ class demomenu(object):
         """ Demo Joke class """
         j = Jokes.demo2()
 
+    def _realTimeTalk(self):
+        """ Pandorabot Personality System """
+        p = Pandorabot.Pandorabot(__raspiaibotid__)
+        sr = SpeechRecognition.SpeechRecognition()
+        print "\nEntering interactive mode (Say exit to excape)"
+        while True:
+            print "LISTENING>> "
+            input = sr.Micinput()
+            print "  RASPAI HEARD: " + str(input)
+            #"exit" is a command; it is the first command.
+            if(str(input).lower() == "exit"):
+                break
+            else:
+                response = p._botsession.think(input)
+                speech = TXT2SPEECH.txttospeech(120, 0)
+                print "Started!"
+                speech.Say(response, True) #True=print
+
+        print "Finished Pandorabot Personality System with SpeechRecognition!"
+
+
     def _aimldemo(self):
         """ Demo Joke class """
         print "RUNNING PRE-SET TESTS..."
@@ -193,7 +214,8 @@ class demomenu(object):
                 ('Joke demo [random joke]', self._tellrandomjoke),
                 ('Joke demo [random joke and Tweet it]', self._tellrandomjokeandtweet),
                 ('AIML demo [Pre-set questions]', self._aimldemo),
-                ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot))
+                ('Activate Pandorabot Personality System [raspiAI bot]', self._aimlpandorabot),
+                ('Activate Pandorabot Personality System with SpeechmicRecognition', self._realTimeTalk))
                 
 
 def start():
