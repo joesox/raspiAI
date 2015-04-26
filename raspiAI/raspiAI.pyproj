@@ -5,15 +5,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbf1dd62-99d2-4261-8f8e-f7fa81f18a8c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>demomenu.py</StartupFile>
+    <StartupFile>PyAudioTest.py</StartupFile>
     <SearchPath>..\..\..\..\..\..\..\..\Python27\Lib\site-packages\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>raspiAI</Name>
     <RootNamespace>raspiAI</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>
-    </CommandLineArguments>
+    <CommandLineArguments>ilikepie.wav</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -39,6 +38,7 @@
     <Compile Include="Pandorabot.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PyAudioTest.py" />
     <Compile Include="SpeechRecognition.py">
       <SubType>Code</SubType>
     </Compile>
