@@ -127,7 +127,7 @@ class demomenu(object):
 
     def _speechmicrecognition(self):
         """ Demo speechrecognition"""
-        sr = SpeechRecognition.demo2()
+        sr = SpeechRecognition.demo3()
 
     def _visionphoto(self):
         """ Demo Vision class """

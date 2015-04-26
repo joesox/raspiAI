@@ -2,8 +2,8 @@
 #good site http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html
 import os
 import sys
-import numpy as np             #its erroring out for me here. was trying to run but it wont start cuase of this :(
-import cv2                     #its erroring out for me here. was trying to run but it wont start cuase of this :(
+import numpy as np             
+import cv2                     #only this now its erroring out for me here. was trying to run but it wont start cuase of this :(
 import cv2.cv as cv            #when i commented out all of it it started, maybe cause i dont have a camera attached
 
 __version__ = '0.1.20150419'
