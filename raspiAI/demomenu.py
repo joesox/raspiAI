@@ -189,7 +189,7 @@ class demomenu(object):
         p = Pandorabot.Pandorabot(__raspiaibotid__)
         print "\nEntering interactive mode (ctrl-c to exit)"
         while True:
-            input = raw_input(">> ")
+            input = raw_input("TYPE HERE:>> ")
             if(str(input).lower() == "exit"):
                 break
             else:

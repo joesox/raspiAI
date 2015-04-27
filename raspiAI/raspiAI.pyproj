@@ -12,8 +12,7 @@
     <Name>raspiAI</Name>
     <RootNamespace>raspiAI</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>
-    </CommandLineArguments>
+    <CommandLineArguments>ilikepie.wav</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -39,6 +38,7 @@
     <Compile Include="Pandorabot.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PyAudioTest.py" />
     <Compile Include="SpeechRecognition.py">
       <SubType>Code</SubType>
     </Compile>
