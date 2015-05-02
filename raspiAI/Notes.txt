@@ -15,6 +15,7 @@ sudo apt-get install jackd					[place this command in system startup: jackd -d d
 sudo pip install requests==2.6.0 			[http://python-requests.org (2.6.0)]
 sudo pip install oauthlib==2.6.0			[https://github.com/requests/requests-oauthlib (0.7.2)]
 sudo pip install requests_oauth==0.4.2
+sudo pip install enum34						[https://pypi.python.org/pypi/enum34]
 download and install twitterapi				[https://github.com/geduldig/TwitterAPI]
 	download zip and place the 'TwitterAPI' folder in /usr/lib/python2.7/dist-packages
 	open TwitterAPI.py and change line 7 to __localcreds__ = '/usr/local/lib/python2.7/site-packages/TwitterAPI/credentials.txt'
@@ -156,6 +157,7 @@ PbPython 0.1.9				[https://developer.pandorabots.com/docs]
 1) Perform "PACKAGES INSTALL HISTORY / NEEDED ON RASPI" steps above.
 2) Copy the "raspiAI.py" files to your raspberry pi folder: /usr/local/lib/python2.7/site-packages
 3) $ sudo python /usr/local/lib/python2.7/site-packages/raspiAI.py
+
 
 
 ////////////////////////////////////////////////////////////////

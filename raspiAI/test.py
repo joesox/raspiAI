@@ -4,7 +4,7 @@ import speech_recognition as sr
 import thread
 import time
 
-__version__ = '0.1.20150419'
+__version__ = '0.1.20150502'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "SpeechRecognition Class to work with SpeechRecognitionAPI."
