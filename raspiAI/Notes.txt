@@ -8,15 +8,115 @@
 sudo apt-get install espeak					[http://espeak.sourceforge.net/]
 sudo pip install pyttsx						[http://pyttsx.readthedocs.org/en/latest/install.html]
 //* Other components:
-sudo pip install timer
 sudo pip install configobj					[https://github.com/DiffSK/configobj]
 sudo pip install SpeechRecognition			[https://github.com/Uberi/speech_recognition#readme]
+sudo pip install aiml
 sudo apt-get install jackd					[place this command in system startup: jackd -d dummy]
-sudo apt-get install twitterapi				[https://github.com/geduldig/TwitterAPI] (Supply your own Twitter creds in the TwitterAPI credentials.txt)
-download opencv 2.3.1 here https://github.com/ltseez/opencv/archive/2.3.1.zip
-	Then, extract using sudo permissions to /usr/local/lib which will create /usr/local/lib/opencv-2.3.1 folder.
-	Next, 
-ref:
+sudo pip install requests==2.6.0 			[http://python-requests.org (2.6.0)]
+sudo pip install oauthlib==2.6.0			[https://github.com/requests/requests-oauthlib (0.7.2)]
+sudo pip install requests_oauth==0.4.2
+download and install twitterapi				[https://github.com/geduldig/TwitterAPI]
+	download zip and place the 'TwitterAPI' folder in /usr/lib/python2.7/dist-packages
+	open TwitterAPI.py and change line 7 to __localcreds__ = '/usr/local/lib/python2.7/site-packages/TwitterAPI/credentials.txt'
+	(Supply your own Twitter creds in the TwitterAPI credentials.txt) 
+
+// INSTALL RASPIAI ON RASPI //
+Download .zip file from http://github.com/joesox/raspiai and extract
+Open /home/pi/Downloads/raspiAI-master/raspiAI/demomenu.py in Geany
+In Geany, press Run
+
++++ trying ++++...
+$ sudo apt-get install build-essential cmake pkg-config
+$ sudo apt-get install build-essential checkinstall git cmake libfaac-dev libjack-jackd2-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev texi2html yasm zlib1g-dev
+$ sudo apt-get install libgstreamer0.10-0 libgstreamer0.10-dev gstreamer0.10-tools gstreamer0.10-plugins-base libgstreamer-plugins-base0.10-dev gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+Download v4l-utils-0.8.5.tar.bz2 from http://www.linuxtv.org/downloads/v4l-utils/
+Build v4l by entering the following commands in a terminal:
+make
+sudo make install
+
+Next, libfaac-dev to be installed follow these instructions: http://raspberrypi.stackexchange.com/questions/10250/how-do-i-install-libfaac-dev-on-raspi
+
+sudo apt-get install build-essential cmake cmake-curses-gui pkg-config libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libtiff4-dev libtiff4 libtiffxx0c2 libtiff-tools libeigen3-dev
+sudo apt-get install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev swig libv4l-0 libv4l-dev python-numpy libpython2.7 python-dev python2.7-dev libgtk2.0-dev
+
+download FFmpeg-n0.8.1 and extract and shell to
+1) Type './configure' to create the configuration. wait until completed.
+2) Then type 'make' to build FFmpeg. GNU Make 3.81 or later is required.
+3) Type 'make install' to install all binaries and libraries you built. [2hr]
+
+
+install opencv 2.3.1 wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.3.1/OpenCV-2.3.1a.tar.bz2
+
+cd OpenCV-2.3.1/
+mkdir build
+cd build
+cmake ..
+
+Check that the output of cmake includes the following text:
+found gstreamer-base-0.10
+GTK+ 2.x: YES
+FFMPEG: YES
+GStreamer: YES
+V4L/V4L2: Using libv4l
+
+Run make [10:36-12:00 failed]
+Run sudo make install
+	look in /usr/local/opencv
+
+try this EXACTLY if it doesn't work http://www.ozbotz.org/opencv-installation-2-3-1/
+fyi, install motion for opencv 2.4 stuff
+------- did not work:- ---
+install opencv 2.3.1 https://github.com/Itseez/opencv/archive/2.3.1.zip or wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.3.1/OpenCV-2.3.1a.tar.bz2
+$ sudo apt-get install build-essential cmake pkg-config
+$ sudo apt-get install libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev
+$ sudo apt-get install libgtk2.0-dev
+$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+$ sudo apt-get install libatlas-base-dev gfortran
+
+trying: 
+sudo apt-get install vlc
+http://www.ozbotz.org/opencv-installation-2-3-1/
+	download https://github.com/FFmpeg/FFmpeg/releases/tag/n0.7.17 for step5
+pi@spencerpi ~/Downloads/FFmpeg-n0.8.1 $ ./configure --enable-gpl --enable-libfaac --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libx264 --enable-libxvid --enable-nonfree --enable-postproc --enable-version3 --enable-x11grab
+
+ERROR: libfaac not found
+
+If you think configure made a mistake, make sure you are using the latest
+version from Git.  If the latest version fails, report the problem to the
+ffmpeg-user@ffmpeg.org mailing list or IRC #ffmpeg on irc.freenode.net.
+Include the log file "config.log" produced by configure as this will help
+solving the problem.
+pi@spencerpi ~/Downloads/FFmpeg-n0.8.1 $ make
+Makefile:1: config.mak: No such file or directory
+libavutil/Makefile:1: libavutil/../config.mak: No such file or directory
+libavutil/../subdir.mak:96: warning: overriding recipe for target 'libavutil/'
+libavutil/../subdir.mak:26: warning: ignoring old recipe for target 'libavutil/'
+libavutil/../subdir.mak:96: warning: overriding recipe for target 'libavutil/'
+libavutil/../subdir.mak:96: warning: ignoring old recipe for target 'libavutil/'
+Makefile:239: /tests/fate.mak: No such file or directory
+Makefile:240: /tests/fate2.mak: No such file or directory
+Makefile:242: /tests/fate/aac.mak: No such file or directory
+Makefile:243: /tests/fate/als.mak: No such file or directory
+Makefile:244: /tests/fate/fft.mak: No such file or directory
+Makefile:245: /tests/fate/h264.mak: No such file or directory
+Makefile:246: /tests/fate/mp3.mak: No such file or directory
+Makefile:247: /tests/fate/vorbis.mak: No such file or directory
+Makefile:248: /tests/fate/vp8.mak: No such file or directory
+make: *** No rule to make target '/tests/fate/vp8.mak'.  Stop.
+pi@spencerpi ~/Downloads/FFmpeg-n0.8.1 $ 
+
+DID NOT WORK:
+sudo apt-get -y install build-essential cmake cmake-qt-gui pkg-config libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libtiff4-dev libtiff4 libtiffxx0c2 libtiff-tools
+sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev libdc1394-22-dev libdc1394-22 libdc1394-utils swig libv4l-0 libv4l-dev python-numpy libpython2.6 python-dev python2.6-dev libgtk2.0-dev pkg-config
+
+
+$ mkdir release
+$ cd release
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ..
+# make
+# sudo make install
+
+Try this next:
 http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/
 ////////////////////////////////////////////////////////
 //== SYSTEM PREP FOR PYTHON 2.7 STEPS / ON WINDOWS   ///
@@ -26,8 +126,6 @@ Python 2.7.9					[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi]
 PythonPackageManager(optional)	[http://sourceforge.net/projects/pythonpkgmgr/]
 pywin32							[http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download]
 Numpy 1.6.1						[http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/numpy-1.6.1-win32-superpack-python2.7.exe/download] [http://www.numpy.org]
-pyaudio							[http://people.csail.mit.edu/hubert/pyaudio/ ][http://people.csail.mit.edu/hubert/pyaudio/packages/pyaudio-0.2.8.py27.exe]
-
 Safe to use PythonPackageManager for the following except opencv:
 	pyttsx 1.1						[https://github.com/parente/pyttsx]
 	ConfigObj 5.0.6					[https://github.com/DiffSK/configobj]
