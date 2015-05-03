@@ -1,65 +1,61 @@
-import os
-import sys
-import speech_recognition as sr
-import thread
-import time
+import Queue 
+import threading 
+import time 
+import thread  
 
-__version__ = '0.1.20150419'
-__author__ = "JPSIII and sjs_20012001"
-__url__ = 'https://github.com/joesox/raspiAI'
-__doc__ = "SpeechRecognition Class to work with SpeechRecognitionAPI."
+doExit = 0  
 
-class SpeechRecognition(object):
-    """description of SpeechRecognition class"""
-    def __repr__(self):
-        if not self:  
-            return 'Attrs()'  
-        return '<%s>' % (self.__class__.__name__)
+class newThread(threading.Thread): 
+    def __init__(self, threadID, name, q):
+        self.threadID = threadID 
+        self.name = name 
+        self.q = q 
+        threading.Thread.__init__(self) 
+    def run(self): 
+        print "Starting " + self.name 
+        process_data(self.name, self.q) 
+        print "Exiting " + self.name  
+        
+    def process_data(tName, q): 
+        while not doExit: 
+            queueLock.acquire() 
+            if not workQueue.empty(): 
+                data = q.get() 
+                queueLock.release() 
+                print "%s processing %s" % (tName, data) 
+            else: 
+                queueLock.release() 
+            time.sleep(1)  
 
-    def HearWAVfiledemo (self):
-        r = sr.Recognizer()
-        with sr.WavFile("ilikepie.wav") as source:          # use "ilikepie.wav" as the audio source
-            audio = r.record(source)                        # extract audio data from the file
-        try:
-            print("Transcription: " + r.recognize(audio))   # recognize speech using Google Speech Recognition
-        except LookupError:                                 # speech is unintelligible
-            print("Could not understand audio")
+threadList = ["Thread1", "Thread2", "Thread3"] 
+wordList = ["One", "Two", "Three", "Four", "Five"] 
+queueLock = threading.Lock() 
+workQueue = Queue.Queue(10) 
+threads = [] 
+tID = 1  
+                
+#Create new threads 
+for tName in threadList: 
+    thread = newThread(tID, tName, workQueue) 
+    thread.start() 
+    threads.append(thread) 
+    tID += 1  
+    
+#Fill the queue 
+queueLock.acquire() 
+for word in wordList: 
+    workQueue.put(word) 
+queueLock.release()  
 
-    def Micinput (self):
-        r = sr.Recognizer()
-        with sr.Microphone() as source:                # use the default microphone as the audio source
-            audio = r.listen(source)                   # listen for the first phrase and extract it into audio data
-        try:
-            print("You said " + r.recognize(audio))    # recognize speech using Google Speech Recognition
-        except LookupError:                            # speech is unintelligible
-            print("Could not understand audio")
+#Wait for queue to empty 
+while not workQueue.empty(): 
+    pass  
 
-    def callback(recognizer, audio):                          
-        """ this is called from the background thread """
-        try:
-            print("You said " + recognizer.recognize(audio))  # received audio data, now need to recognize it
-        except LookupError:
-            print("Oops! Didn't catch that")
-        r = sr.Recognizer()
-        r.listen_in_background(sr.Microphone(), callback)
+#Notify threads it's time to exit 
+doExit = 1  
 
-    #def ListenRealTime(self):
-        #launch a seperate listening thread to constantly listen for someone talking
-        #thread.start_new_thread( callback, (, 2, ) )
-
-def demo():
-    c = SpeechRecognition()
-    c.HearWAVfiledemo()
-    print "Finished SpeechRecognition demo!"
-
-def demo2():
-    r = SpeechRecognition()
-    r.Micinput()
-    print "Finished SpeechRecognition demo!"
-
-def demo3():
-    r = SpeechRecognition()
-
-
-if __name__ == '__main__':
-  demo3()
+#Wait for all threads to complete 
+for t in threads: 
+    t.join()  
+    
+print "Exiting Main Thread"
