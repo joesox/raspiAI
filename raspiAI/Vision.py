@@ -6,7 +6,7 @@ import numpy as np
 import cv2                     #only this now its erroring out for me here. was trying to run but it wont start cuase of this :(
 import cv2.cv as cv            #when i commented out all of it it started, maybe cause i dont have a camera attached
 
-__version__ = '0.1.20150419'
+__version__ = '0.1.20150502'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI."

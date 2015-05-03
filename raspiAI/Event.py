@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 from configobj import ConfigObj
 from enum import Enum
-__version__ = '0.1.20150419'
+__version__ = '0.1.20150502'
 __author__ = "JPSIII and sjs_20012001"
 __url__ = 'https://github.com/joesox/raspiAI'
 __doc__ = "Twitter Class to work with TwitterAPI."
@@ -71,6 +71,10 @@ class Event(object):
         return 0
 
     def pprint(self):
+        """ 
+        Pretty Print this Event
+        "ID\t| NAME\t\t| WHOID | WHATID | WHENID              | WHYID | HOWID|"
+        """
         print("******************")
         print("****  EVENT   ****")
         print("ID\t| NAME\t\t| WHOID | WHATID | WHENID              | WHYID | HOWID|")
@@ -80,22 +84,27 @@ class Event(object):
 
     @staticmethod
     def _GetWhoID_(whoid=-1, configfile=ConfigObj()):
+        """ Return full event associated with this WhoID """
         return configfile["WHO"][str(whoid)]
 
     @staticmethod
     def _GetWhatID_(whatid=-1, configfile=ConfigObj()):
+        """ Return full event associated with this WhatID """
         return configfile["WHAT"][str(whatid)]
 
     @staticmethod
     def _GetWhenID_(whenid=datetime.now().strftime('%Y-%m-%d %H:%M:%S'), configfile=ConfigObj()):
+        """ Return full event associated with this WhenID """
         return configfile["WHEN"][whenid]
 
     @staticmethod
     def _GetWhyID_(whyid=-1, configfile=ConfigObj()):
+        """ Return full event associated with this WhyID """
         return configfile["WHY"][str(whyid)]
 
     @staticmethod
     def _GetHowID_(howid=-1, configfile=ConfigObj()):
+        """ Return full event associated with this HowID """
         return configfile["HOW"][str(howid)]
 
     @staticmethod
